@@ -1,2 +1,2 @@
 # idc-website
-offical website of India Digital Coin (IDC)
+offical website for India Digital Coin (IDC)
