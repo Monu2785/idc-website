@@ -1,112 +1,100 @@
 <!DOCTYPE html><html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>India Digital Coin (IDC)</title>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Roboto', sans-serif;
-    }
     body {
-      background-color: #f4f4f4;
-      color: #333;
-    }
-    header {
-      background-color: #111;
-      padding: 10px 20px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-    }
-    header h1 {
-      color: #fff;
-      font-size: 1.5rem;
-    }
-    nav a {
-      margin: 0 10px;
-      color: #fff;
-      text-decoration: none;
-      font-weight: bold;
-    }
-    .banner {
-      width: 100%;
-      max-height: 600px;
-      object-fit: cover;
-    }
-    .section {
-      padding: 40px 20px;
-      max-width: 1000px;
-      margin: auto;
-    }
-    .section h2 {
-      color: #222;
-      margin-bottom: 10px;
-    }
-    .section p {
-      font-size: 1rem;
-      line-height: 1.6;
-    }
-    .buttons {
-      margin-top: 20px;
-    }
-    .btn {
-      display: inline-block;
-      margin: 10px 10px 0 0;
-      padding: 12px 24px;
-      background-color: #0057b7;
-      color: #fff;
-      text-decoration: none;
-      border-radius: 6px;
-    }
-    footer {
-      text-align: center;
-      padding: 20px;
-      background-color: #111;
-      color: #fff;
-      margin-top: 40px;
-    }
+      margin: 0;
+      font-family: 'Roboto', sans-serif;
+      background: linear-gradient(to bottom, #ffffff, #f0f2f5);
+    }header {
+  background-color: #000;
+  padding: 0;
+}
+
+.banner {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.container {
+  max-width: 960px;
+  margin: auto;
+  padding: 20px;
+}
+
+h1, h2 {
+  color: #222;
+}
+
+.btn {
+  padding: 12px 24px;
+  margin: 10px 10px 20px 0;
+  background-color: #ffcc00;
+  color: #000;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  transition: 0.3s ease;
+}
+
+.btn:hover {
+  background-color: #e6b800;
+}
+
+footer {
+  background-color: #222;
+  color: white;
+  text-align: center;
+  padding: 20px;
+}
+
+.section {
+  margin-bottom: 40px;
+}
+
+.nav-btns {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+@media (max-width: 600px) {
+  .btn {
+    width: 100%;
+    margin: 10px 0;
+  }
+}
+
   </style>
 </head>
-<body>
-  <header>
-    <h1>India Digital Coin</h1>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="#contact">Contact</a>
-      <a href="#download">Downloads</a>
-    </nav>
-  </header>  <img src="idc-banner.png" alt="India Digital Coin Banner" class="w-full rounded-xl shadow-md">  <div class="section" id="about">
-    <h2>About IDC</h2>
-    <p>India Digital Coin (IDC) is a cryptocurrency designed to empower the youth of India and drive digital trading for future generations. Built on the Binance Smart Chain (BSC), IDC is affordable, accessible, and driven by innovation.</p>
-  </div>  <div class="section" id="tokenomics">
-    <h2>Tokenomics</h2>
-    <p>Total Supply: 100,000,000 IDC<br />
-    Blockchain: Binance Smart Chain (BEP-20)<br />
-    Use Case: Trading, Investment, and Utility</p>
-  </div>  <div class="section" id="roadmap">
-    <h2>Roadmap</h2>
-    <p>Phase 1: Token Launch<br />
-    Phase 2: Website & Social Media Integration<br />
-    Phase 3: Listings & Partnerships<br />
-    Phase 4: Community Rewards & Expansion</p>
-  </div>  <div class="section" id="download">
-    <h2>Downloads</h2>
-    <div class="buttons">
-      <a class="btn" href="whitepaper.pdf" download>Download Whitepaper</a>
-      <a class="btn" href="#buy-sell">Buy/Sell IDC</a>
-    </div>
-  </div>  <div class="section" id="contact">
-    <h2>Contact Us</h2>
-    <p>Email: <a href="mailto:indiadigitalcoin2025@gmail.com">indiadigitalcoin2025@gmail.com</a></p>
-    <p>Founder: Chandan Sharma (Monu)</p>
+<body>  <header>
+    <img src="idc-banner.png" alt="India Digital Coin Banner" class="banner" />
+  </header>  <div class="container"><div class="nav-btns">
+  <a href="IDC_Whitepaper.pdf" download class="btn">Download Whitepaper</a>
+  <a href="#" class="btn">Buy / Sell IDC</a>
+</div>
+
+<section class="section">
+  <h2>About India Digital Coin (IDC)</h2>
+  <p>India Digital Coin (IDC) is a new-age cryptocurrency designed to empower youth and digital investors across India. Built on the BNB Smart Chain, it is affordable, secure, and future-ready.</p>
+</section>
+
+<section class="section">
+  <h2>Tokenomics</h2>
+  <p>Total Supply: 100,000,000 IDC<br>Network: BNB Smart Chain (BEP-20)<br>Use Cases: Trading, Payments, Rewards</p>
+</section>
+
+<section class="section">
+  <h2>Founder</h2>
+  <p>Chandan Sharma (Monu)<br>Email: indiadigitalcoin2025@gmail.com</p>
+</section>
+
   </div>  <footer>
-    <p>Visit our website | India Digital Coin | Empowering India's Digital Future</p>
-  </footer>
-</body>
+    Visit our website | © 2025 India Digital Coin. All rights reserved.
+  </footer></body>
 </html>
