@@ -1,124 +1,174 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>India Digital Coin (IDC)</title>
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>India Digital Coin - IDC</title>
   <style>
-    body {
+    * {
       margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to bottom right, #d4af37, #8a9a5b);
-      color: #fff;
-      background-image: url('https://www.transparenttextures.com/patterns/circuits.png');
+      padding: 0;
+      box-sizing: border-box;
+      font-family: 'Segoe UI', sans-serif;
     }
-
+    body {
+      background: linear-gradient(to bottom right, #d1ecff, #e6f7ff);
+      color: #333;
+    }
     header {
+      background: #0f3057;
+      color: white;
+      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 15px 20px;
-      background-color: #0d1b2a;
-      color: #fff;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
     }
-
-    .logo {
-      display: flex;
-      align-items: center;
+    header h1 {
+      font-size: 1.5rem;
     }
-
-    .logo img {
-      height: 40px;
-      margin-right: 10px;
-    }
-
     nav {
-      display: none;
+      display: flex;
+      gap: 1rem;
     }
-
-    .nav-toggle {
-      font-size: 24px;
-      cursor: pointer;
+    nav a {
+      color: white;
+      text-decoration: none;
     }
-
-    .nav-links {
+    .menu-toggle {
       display: none;
       flex-direction: column;
-      background-color: #1b263b;
-      position: absolute;
-      right: 0;
-      top: 60px;
-      width: 200px;
-      padding: 10px;
-      border-radius: 0 0 10px 10px;
-    }
-
-    .nav-links a {
-      color: white;
-      text-decoration: none;
-      padding: 10px;
-      border-bottom: 1px solid #444;
-    }
-
-    .banner {
-      text-align: center;
-      padding: 0;
-    }
-
-    .banner img {
-      width: 100%;
-      height: auto;
-      display: block;
-    }
-
-    .buttons {
-      margin-top: -60px;
-      z-index: 2;
-      position: relative;
-    }
-
-    .buttons button, .buttons a {
-      padding: 10px 20px;
-      margin: 10px;
-      border: none;
-      background-color: white;
-      color: #0d1b2a;
-      font-weight: bold;
-      border-radius: 5px;
       cursor: pointer;
-      text-decoration: none;
     }
-
-    .contact-form {
-      background-color: rgba(0, 0, 0, 0.6);
-      margin: 30px;
-      padding: 20px;
-      border-radius: 10px;
+    .menu-toggle div {
+      width: 25px;
+      height: 3px;
+      background: white;
+      margin: 4px;
     }
-
-    .contact-form input, .contact-form textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border-radius: 5px;
-      border: none;
+    .banner {
+      background: url("images/banner.png") no-repeat center;
+      background-size: cover;
+      height: 300px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
     }
-
-    footer {
-      text-align: center;
-      padding: 15px;
-      background-color: #0d1b2a;
+    .banner h2 {
       color: white;
+      background: rgba(0, 0, 0, 0.6);
+      padding: 1rem 2rem;
+      border-radius: 12px;
+    }
+    .section {
+      padding: 2rem;
+      max-width: 900px;
+      margin: auto;
+    }
+    .section img.logo {
+      width: 100px;
+      margin-bottom: 1rem;
+    }
+    .buttons {
+      margin-top: 1rem;
+    }
+    .buttons a {
+      margin-right: 1rem;
+      text-decoration: none;
+      padding: 0.6rem 1.2rem;
+      background: #0f3057;
+      color: white;
+      border-radius: 5px;
+    }
+    footer {
+      background: #002244;
+      color: white;
+      text-align: center;
+      padding: 1.5rem;
+      font-size: 0.9rem;
     }
 
     @media (max-width: 768px) {
       nav {
-        display: block;
+        display: none;
+        flex-direction: column;
+        background: #0f3057;
+        position: absolute;
+        top: 60px;
+        right: 0;
+        width: 200px;
+      }
+      nav.show {
+        display: flex;
+      }
+      .menu-toggle {
+        display: flex;
       }
     }
   </style>
 </head>
-
 <body>
+
+<header>
+  <h1>India Digital Coin</h1>
+  <div class="menu-toggle" onclick="toggleMenu()">
+    <div></div><div></div><div></div>
+  </div>
+  <nav id="navMenu">
+    <a href="#about">About</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#contact">Contact</a>
+    <a href="#faq">FAQ</a>
+  </nav>
+</header>
+
+<div class="banner">
+  <h2>Empowering India's Digital Future</h2>
+</div>
+
+<div class="section" id="about">
+  <img src="images/idc-banner.png" class="logo" alt="IDC Logo" />
+  <h2>About India Digital Coin (IDC)</h2>
+  <p>India Digital Coin (IDC) is built to bring young Indian minds into the world of crypto. Invest. Trade. Grow – The Indian Way with IDC.</p>
+</div>
+
+<div class="section" id="tokenomics">
+  <h2>Tokenomics</h2>
+  <p>Total Supply: 100 Million IDC<br>Chain: BNB Smart Chain (BEP-20)<br>Affordable, Accessible, and Ready for the Future.</p>
+</div>
+
+<div class="section" id="roadmap">
+  <h2>Roadmap</h2>
+  <ul>
+    <li>Phase 1: Token Launch & Website</li>
+    <li>Phase 2: Listings & Wallet Integration</li>
+    <li>Phase 3: Community Growth & Rewards</li>
+  </ul>
+</div>
+
+<div class="section buttons">
+  <a href="IDC_Whitepaper.pdf" download>Download Whitepaper</a>
+  <a href="#">Buy/Sell IDC</a>
+</div>
+
+<div class="section" id="contact">
+  <h2>Contact</h2>
+  <p>Email: indiadigitalcoin2025@gmail.com<br>Founder: Chandan Sharma (Monu)</p>
+</div>
+
+<footer>
+  <p>© 2025 India Digital Coin. All rights reserved.<br>Ready to learn more? Read our Privacy Policy to find out more.</p>
+</footer>
+
+<script>
+  function toggleMenu() {
+    const nav = document.getElementById("navMenu");
+    nav.classList.toggle("show");
+  }
+</script>
+
+</body>
+</html>
