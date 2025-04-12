@@ -2,70 +2,154 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>India Digital Coin (IDC)</title>
-  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" />
-  <script src="https://cdn.tailwindcss.com"></script>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
     body {
-      font-family: 'Inter', sans-serif;
-      background-color: #0f172a;
-      background-image: url('https://i.imgur.com/Q3Ow2Ow.png'); /* Tech motherboard style */
-      background-size: cover;
-      background-repeat: no-repeat;
-    }
-    .bg-overlay {
-      background: linear-gradient(to bottom right, #a3e635b3, #4ade80b3);
-    }
-    .nav-menu {
-      display: none;
-    }
-    .hamburger.active + .nav-menu {
-      display: block;
-    }
-  </style>
-</head><body class="text-white">
-  <header class="flex justify-between items-center p-4 bg-overlay">
-    <div class="flex items-center space-x-2">
-      <img src="https://i.imgur.com/rFVACzC.png" alt="IDC Logo" class="w-10 h-10" />
-      <span class="font-bold text-xl">IDC</span>
-    </div>
-    <div class="block md:hidden">
-      <button class="hamburger text-white text-3xl">☰</button>
-    </div>
-    <nav class="nav-menu absolute top-16 left-0 w-full bg-[#14532d] md:static md:flex md:space-x-6 md:bg-transparent text-center md:text-left">
-      <a href="#about" class="block py-2 md:inline-block px-4 hover:text-yellow-300">About</a>
-      <a href="#tokenomics" class="block py-2 md:inline-block px-4 hover:text-yellow-300">Tokenomics</a>
-      <a href="#roadmap" class="block py-2 md:inline-block px-4 hover:text-yellow-300">Roadmap</a>
-      <a href="#contact" class="block py-2 md:inline-block px-4 hover:text-yellow-300">Contact</a>
-      <a href="#faq" class="block py-2 md:inline-block px-4 hover:text-yellow-300">FAQ</a>
-    </nav>
-  </header>  <main class="p-4">
-    <section class="max-w-4xl mx-auto mt-4 rounded-xl overflow-hidden">
-      <img src="https://i.imgur.com/XrrpkAI.jpg" class="w-full object-cover rounded-xl" alt="IDC Banner" />
-      <div class="mt-4 space-y-4 text-center">
-        <h1 class="text-4xl font-bold">India Digital Coin</h1>
-        <p class="text-lg">Invest. Trade. Grow – The Indian Way with IDC</p>
-        <div class="flex flex-wrap justify-center gap-4">
-          <button class="bg-green-500 hover:bg-green-600 px-6 py-2 rounded-lg text-white">Buy</button>
-          <button class="bg-red-500 hover:bg-red-600 px-6 py-2 rounded-lg text-white">Sell</button>
-          <a href="/whitepaper.pdf" class="bg-white text-black font-bold px-6 py-2 rounded-lg">Download Whitepaper</a>
-        </div>
-      </div>
-    </section><section id="contact" class="max-w-2xl mx-auto mt-12 bg-white bg-opacity-10 p-6 rounded-lg">
-  <h2 class="text-2xl font-bold mb-4 text-center">Contact Us</h2>
-  <form class="space-y-4">
-    <input type="text" placeholder="Your Name" class="w-full px-4 py-2 rounded bg-white text-black" />
-    <input type="text" placeholder="Mobile Number" class="w-full px-4 py-2 rounded bg-white text-black" />
-    <textarea placeholder="Your Message" class="w-full px-4 py-2 rounded bg-white text-black"></textarea>
-    <button type="submit" class="w-full bg-green-500 hover:bg-green-600 px-6 py-2 rounded text-white font-bold">Send Message</button>
-  </form>
-</section>
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #d4af37, #8a9a5b);
+      color: #fff;
+      background-image: url('https://www.transparenttextures.com/patterns/circuits.png');
+    }header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 15px 20px;
+  background-color: #0d1b2a;
+  color: #fff;
+}
 
-  </main>  <footer class="mt-12 p-6 text-center text-sm bg-[#14532d] text-white">
-    <p>© 2025 India Digital Coin. All rights reserved.</p>
-    <p>Ready to learn more? <a href="#" class="underline">Read our Privacy Policy</a></p>
+.logo {
+  display: flex;
+  align-items: center;
+}
+
+.logo img {
+  height: 40px;
+  margin-right: 10px;
+}
+
+nav {
+  display: none;
+}
+
+.nav-toggle {
+  font-size: 24px;
+  cursor: pointer;
+}
+
+.nav-links {
+  display: none;
+  flex-direction: column;
+  background-color: #1b263b;
+  position: absolute;
+  right: 0;
+  top: 60px;
+  width: 200px;
+  padding: 10px;
+  border-radius: 0 0 10px 10px;
+}
+
+.nav-links a {
+  color: white;
+  text-decoration: none;
+  padding: 10px;
+  border-bottom: 1px solid #444;
+}
+
+.banner {
+  text-align: center;
+  padding: 0;
+}
+
+.banner img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.buttons {
+  margin-top: -60px;
+  z-index: 2;
+  position: relative;
+}
+
+.buttons button, .buttons a {
+  padding: 10px 20px;
+  margin: 10px;
+  border: none;
+  background-color: white;
+  color: #0d1b2a;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.contact-form {
+  background-color: rgba(0, 0, 0, 0.6);
+  margin: 30px;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.contact-form input, .contact-form textarea {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+  border: none;
+}
+
+footer {
+  text-align: center;
+  padding: 15px;
+  background-color: #0d1b2a;
+  color: white;
+}
+
+@media (max-width: 768px) {
+  nav {
+    display: block;
+  }
+}
+
+  </style>
+</head><body>
+  <header>
+    <div class="logo">
+      <img src="https://monu2785.github.io/idc-website/assets/idc-logo.png" alt="IDC Logo">
+      <span>IDC</span>
+    </div>
+    <div class="nav-toggle" onclick="toggleNav()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>  <section class="banner">
+    <img src="https://monu2785.github.io/idc-website/assets/idc-banner.png" alt="IDC Banner">
+    <div class="buttons">
+      <button>Buy</button>
+      <button>Sell</button>
+      <a href="#" download>Download Whitepaper</a>
+    </div>
+  </section>  <section id="contact" class="contact-form">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="text" placeholder="Mobile Number" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>  <footer>
+    <p>© 2025 India Digital Coin | Email: indiadigitalcoin2025@gmail.com</p>
   </footer>  <script>
-    document.querySelector('.hamburger').addEventListener('click', function () {
-      this.classList.toggle('active');
-      document.querySelector('.nav-menu').classList.toggle('hidden');
-    });
+    function toggleNav() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
+    }
   </script></body></html>
