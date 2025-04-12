@@ -1,174 +1,172 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>India Digital Coin - IDC</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>India Digital Coin (IDC)</title>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', sans-serif;
-    }
     body {
-      background: linear-gradient(to bottom right, #d1ecff, #e6f7ff);
-      color: #333;
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to bottom right, #d4af37, #8a9a5b);
+      color: #fff;
+      background-image: url('https://www.transparenttextures.com/patterns/circuits.png');
     }
+
     header {
-      background: #0f3057;
-      color: white;
-      padding: 1rem 2rem;
       display: flex;
       justify-content: space-between;
       align-items: center;
-      position: sticky;
-      top: 0;
-      z-index: 1000;
+      padding: 15px 20px;
+      background-color: #0d1b2a;
+      color: #fff;
     }
-    header h1 {
-      font-size: 1.5rem;
-    }
-    nav {
-      display: flex;
-      gap: 1rem;
-    }
-    nav a {
-      color: white;
-      text-decoration: none;
-    }
-    .menu-toggle {
-      display: none;
-      flex-direction: column;
-      cursor: pointer;
-    }
-    .menu-toggle div {
-      width: 25px;
-      height: 3px;
-      background: white;
-      margin: 4px;
-    }
-    .banner {
-      background: url("images/banner.png") no-repeat center;
-      background-size: cover;
-      height: 300px;
+
+    .logo {
       display: flex;
       align-items: center;
-      justify-content: center;
     }
-    .banner h2 {
+
+    .logo img {
+      height: 40px;
+      margin-right: 10px;
+    }
+
+    nav {
+      display: none;
+    }
+
+    .nav-toggle {
+      font-size: 24px;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: none;
+      flex-direction: column;
+      background-color: #1b263b;
+      position: absolute;
+      right: 0;
+      top: 60px;
+      width: 200px;
+      padding: 10px;
+      border-radius: 0 0 10px 10px;
+    }
+
+    .nav-links a {
       color: white;
-      background: rgba(0, 0, 0, 0.6);
-      padding: 1rem 2rem;
-      border-radius: 12px;
-    }
-    .section {
-      padding: 2rem;
-      max-width: 900px;
-      margin: auto;
-    }
-    .section img.logo {
-      width: 100px;
-      margin-bottom: 1rem;
-    }
-    .buttons {
-      margin-top: 1rem;
-    }
-    .buttons a {
-      margin-right: 1rem;
       text-decoration: none;
-      padding: 0.6rem 1.2rem;
-      background: #0f3057;
-      color: white;
-      border-radius: 5px;
+      padding: 10px;
+      border-bottom: 1px solid #444;
     }
-    footer {
-      background: #002244;
-      color: white;
+
+    .banner {
       text-align: center;
-      padding: 1.5rem;
-      font-size: 0.9rem;
+      padding: 0;
+    }
+
+    .banner img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .buttons {
+      margin-top: -60px;
+      z-index: 2;
+      position: relative;
+    }
+
+    .buttons button, .buttons a {
+      padding: 10px 20px;
+      margin: 10px;
+      border: none;
+      background-color: white;
+      color: #0d1b2a;
+      font-weight: bold;
+      border-radius: 5px;
+      cursor: pointer;
+      text-decoration: none;
+    }
+
+    .contact-form {
+      background-color: rgba(0, 0, 0, 0.6);
+      margin: 30px;
+      padding: 20px;
+      border-radius: 10px;
+    }
+
+    .contact-form input, .contact-form textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 5px;
+      border: none;
+    }
+
+    footer {
+      text-align: center;
+      padding: 15px;
+      background-color: #0d1b2a;
+      color: white;
     }
 
     @media (max-width: 768px) {
       nav {
-        display: none;
-        flex-direction: column;
-        background: #0f3057;
-        position: absolute;
-        top: 60px;
-        right: 0;
-        width: 200px;
-      }
-      nav.show {
-        display: flex;
-      }
-      .menu-toggle {
-        display: flex;
+        display: block;
       }
     }
   </style>
 </head>
+
 <body>
+  <header>
+    <div class="logo">
+      <img src="https://monu2785.github.io/idc-website/assets/idc-logo.png" alt="IDC Logo">
+      <span>IDC</span>
+    </div>
+    <div class="nav-toggle" onclick="toggleNav()">
+      <i class="fas fa-bars"></i>
+    </div>
+    <div class="nav-links" id="navLinks">
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </header>
 
-<header>
-  <h1>India Digital Coin</h1>
-  <div class="menu-toggle" onclick="toggleMenu()">
-    <div></div><div></div><div></div>
-  </div>
-  <nav id="navMenu">
-    <a href="#about">About</a>
-    <a href="#tokenomics">Tokenomics</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#contact">Contact</a>
-    <a href="#faq">FAQ</a>
-  </nav>
-</header>
+  <section class="banner">
+    <img src="https://monu2785.github.io/idc-website/assets/idc-banner.png" alt="IDC Banner">
+    <div class="buttons">
+      <button>Buy</button>
+      <button>Sell</button>
+      <a href="#" download>Download Whitepaper</a>
+    </div>
+  </section>
 
-<div class="banner">
-  <h2>Empowering India's Digital Future</h2>
-</div>
+  <section id="contact" class="contact-form">
+    <h2>Contact Us</h2>
+    <form>
+      <input type="text" placeholder="Your Name" required>
+      <input type="text" placeholder="Mobile Number" required>
+      <textarea placeholder="Your Message" rows="5" required></textarea>
+      <button type="submit">Submit</button>
+    </form>
+  </section>
 
-<div class="section" id="about">
-  <img src="images/idc-banner.png" class="logo" alt="IDC Logo" />
-  <h2>About India Digital Coin (IDC)</h2>
-  <p>India Digital Coin (IDC) is built to bring young Indian minds into the world of crypto. Invest. Trade. Grow – The Indian Way with IDC.</p>
-</div>
+  <footer>
+    <p>© 2025 India Digital Coin | Email: indiadigitalcoin2025@gmail.com</p>
+  </footer>
 
-<div class="section" id="tokenomics">
-  <h2>Tokenomics</h2>
-  <p>Total Supply: 100 Million IDC<br>Chain: BNB Smart Chain (BEP-20)<br>Affordable, Accessible, and Ready for the Future.</p>
-</div>
-
-<div class="section" id="roadmap">
-  <h2>Roadmap</h2>
-  <ul>
-    <li>Phase 1: Token Launch & Website</li>
-    <li>Phase 2: Listings & Wallet Integration</li>
-    <li>Phase 3: Community Growth & Rewards</li>
-  </ul>
-</div>
-
-<div class="section buttons">
-  <a href="IDC_Whitepaper.pdf" download>Download Whitepaper</a>
-  <a href="#">Buy/Sell IDC</a>
-</div>
-
-<div class="section" id="contact">
-  <h2>Contact</h2>
-  <p>Email: indiadigitalcoin2025@gmail.com<br>Founder: Chandan Sharma (Monu)</p>
-</div>
-
-<footer>
-  <p>© 2025 India Digital Coin. All rights reserved.<br>Ready to learn more? Read our Privacy Policy to find out more.</p>
-</footer>
-
-<script>
-  function toggleMenu() {
-    const nav = document.getElementById("navMenu");
-    nav.classList.toggle("show");
-  }
-</script>
-
+  <script>
+    function toggleNav() {
+      const navLinks = document.getElementById("navLinks");
+      navLinks.style.display = navLinks.style.display === "flex" ? "none" : "flex";
+    }
+  </script>
 </body>
+
 </html>
