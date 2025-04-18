@@ -4,6 +4,9 @@
   <title>India Digital Coin (IDC)</title>
   <link rel="stylesheet" href="style.css">
   <style>
+    html {
+  scroll-behavior: smooth;
+    }
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
@@ -33,7 +36,21 @@ nav a {
   text-decoration: none;
   font-weight: bold;
 }
-
+  .section {
+  padding: 60px 20px;
+  background-color: rgba(0, 0, 0, 0.2);
+  margin: 30px auto;
+  max-width: 900px;
+  border-radius: 12px;
+}
+.section h2 {
+  color: #ffd700;
+  margin-bottom: 10px;
+}
+.section ul {
+  list-style-type: disc;
+  padding-left: 20px;
+}
 .container {
   padding: 20px;
   text-align: center;
@@ -62,6 +79,24 @@ nav a {
   font-size: 22px;
   margin: 20px auto 10px;
 }
+    <div id="about" class="section">
+  <h2>About</h2>
+  <p>India Digital Coin is a youth-centric digital currency aimed at revolutionizing crypto adoption in India...</p>
+</div>
+
+<div id="tokenomics" class="section">
+  <h2>Tokenomics</h2>
+  <p>Total Supply: 100,000,000 IDC. 50% Public Sale, 20% Team, 15% Rewards, 10% Liquidity, 5% Reserve.</p>
+</div>
+
+<div id="roadmap" class="section">
+  <h2>Roadmap</h2>
+  <ul>
+    <li>Q1: Token Launch</li>
+    <li>Q2: Website + Marketing</li>
+    <li>Q3: Exchange Listings</li>
+  </ul>
+</div>
 
 footer {
   background-color: #002b1a;
