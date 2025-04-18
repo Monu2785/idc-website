@@ -1,147 +1,144 @@
-<!DOCTYPE html><html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>India Digital Coin</title>
-    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet" />
-    <style>
-      * {
-        margin: 0;
-        padding: 0;
-        box-sizing: border-box;
-        font-family: 'Poppins', sans-serif;
-      }
-      body {
-        background: linear-gradient(135deg, #004d40, #ffd700);
-        color: white;
-      }
-      header {
-        position: relative;
-        padding: 10px 20px;
-        display: flex;
-        justify-content: space-between;
-        align-items: center;
-      }
-      .menu-toggle {
-        display: block;
-        cursor: pointer;
-        z-index: 1000;
-        position: absolute;
-        top: 20px;
-        right: 20px;
-      }
-      .menu-toggle div {
-        width: 25px;
-        height: 3px;
-        background: white;
-        margin: 5px;
-      }
-      nav {
-        position: fixed;
-        top: 0;
-        right: -100%;
-        height: 100vh;
-        width: 200px;
-        background-color: #00332f;
-        display: flex;
-        flex-direction: column;
-        align-items: center;
-        justify-content: center;
-        transition: 0.3s ease-in-out;
-      }
-      nav.active {
-        right: 0;
-      }
-      nav a {
-        color: white;
-        text-decoration: none;
-        font-size: 18px;
-        margin: 15px 0;
-      }
-      .hero {
-        position: relative;
-        text-align: center;
-      }
-      .hero img {
-        width: 100%;
-        height: auto;
-        object-fit: contain;
-        display: block;
-        margin: 0 auto;
-      }
-      .hero-title {
-        position: absolute;
-        bottom: 20px;
-        left: 50%;
-        transform: translateX(-50%);
-        font-size: 32px;
-        font-weight: bold;
-        color: gold;
-      }
-      .content {
-        text-align: center;
-        margin-top: 20px;
-      }
-      .buy-button {
-        background-color: gold;
-        color: #004d40;
-        padding: 12px 24px;
-        border: none;
-        border-radius: 30px;
-        font-weight: bold;
-        cursor: pointer;
-        margin-top: 10px;
-        text-decoration: none;
-      }
-      footer {
-        text-align: center;
-        margin-top: 40px;
-      }
-      .social {
-        display: flex;
-        justify-content: center;
-        gap: 20px;
-        margin-top: 10px;
-      }
-      .social a {
-        color: gold;
-        font-size: 20px;
-        text-decoration: none;
-      }
-    </style>
-  </head>
-  <body>
-    <header>
-      <h1 class="hero-title">India Digital Coin (IDC)</h1>
-      <div class="menu-toggle" onclick="toggleMenu()">
-        <div></div>
-        <div></div>
-        <div></div>
-      </div>
-    </header>
-    <nav id="menu">
-      <a href="#about">About</a>
-      <a href="#tokenomics">Tokenomics</a>
-      <a href="#roadmap">Roadmap</a>
-      <a href="/downloads/whitepaper.pdf" download>Download Whitepaper</a>
-    </nav>
-    <section class="hero">
-      <img src="https://monu2785.github.io/idc-website/images/banner.jpg" alt="IDC Banner" />
-    </section>
-    <div class="content">
-      <p>Welcome to India Digital Coin</p>
-      <a href="https://pancakeswap.finance/" target="_blank" class="buy-button">Buy / Sell IDC</a>
-    </div>
-    <footer>
-      <div class="social">
-        <a href="https://instagram.com/IndiaDigitalCoin" target="_blank">Instagram</a>
-      </div>
-      <p>© 2025 India Digital Coin</p>
-    </footer>
-    <script>
-      function toggleMenu() {
-        document.getElementById('menu').classList.toggle('active');
-      }
-    </script>
-  </body>
-  </html>
+<!DOCTYPE html><html lang="en"><head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>India Digital Coin (IDC)</title>
+  <link rel="stylesheet" href="style.css">
+  <style>
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: linear-gradient(to right, #014421, #d4af37); /* Dark green to golden */
+      color: #fff;
+    }header {
+  padding: 0;
+  text-align: center;
+}
+
+.banner-top {
+  width: 100%;
+  height: auto;
+}
+
+nav {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 10px;
+  background-color: rgba(0, 0, 0, 0.6);
+}
+
+nav a {
+  color: #ffd700;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+.container {
+  padding: 20px;
+  text-align: center;
+}
+
+.title-under-banner {
+  font-size: 36px;
+  color: #ffd700;
+  margin-top: 20px;
+}
+
+.buy-sell-btn {
+  margin: 20px auto 10px;
+  display: inline-block;
+  background: linear-gradient(to right, #014421, #d4af37);
+  padding: 12px 25px;
+  color: white;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.welcome-text {
+  font-size: 22px;
+  margin: 20px auto 10px;
+}
+
+footer {
+  background-color: #002b1a;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  font-size: 14px;
+}
+
+footer p {
+  margin: 5px 0;
+}
+
+.footer-note {
+  font-style: italic;
+  font-size: 13px;
+  margin-top: 10px;
+  color: #aadfff;
+}
+
+/* Responsive hamburger */
+.hamburger {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  cursor: pointer;
+}
+
+.hamburger div {
+  width: 25px;
+  height: 3px;
+  background-color: #ffd700;
+  margin: 5px 0;
+}
+
+@media (max-width: 768px) {
+  .hamburger {
+    display: block;
+  }
+
+  nav {
+    flex-direction: column;
+    display: none;
+  }
+
+  nav.active {
+    display: flex;
+  }
+}
+
+  </style>
+</head><body>
+  <header>
+    <img src="idc-banner.png" alt="IDC Banner" class="banner-top">
+  </header>  <div class="hamburger" onclick="toggleMenu()">
+    <div></div>
+    <div></div>
+    <div></div>
+  </div>  <nav id="navMenu">
+    <a href="#about">About</a>
+    <a href="#tokenomics">Tokenomics</a>
+    <a href="#roadmap">Roadmap</a>
+    <a href="#faq">FAQ</a>
+    <a href="IDC_Whitepaper.pdf" download>Download Whitepaper</a>
+  </nav>  <div class="container">
+    <h1 class="title-under-banner">India Digital Coin</h1>
+    <a href="https://pancakeswap.finance" target="_blank" class="buy-sell-btn">Buy / Sell IDC</a>
+    <div class="welcome-text">Welcome to India Digital Coin - Empowering the next generation with blockchain.</div><!-- Other website content goes here -->
+
+  </div>  <footer>
+    <p>&copy; 2025 India Digital Coin. All rights reserved.</p>
+    <p class="footer-note">Empowering the next generation with blockchain innovation.</p>
+    <p class="footer-note">Ready to learn more? Read our Privacy Policy to find out more.</p>
+  </footer>  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navMenu');
+      nav.classList.toggle('active');
+    }
+  </script></body></html>
