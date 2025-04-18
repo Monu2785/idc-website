@@ -7,29 +7,54 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #1b3e20, #3a5e2e);
-      color: #f8f8f8;
-    }header {
-  width: 100%;
-  height: auto;
-}
-
-header img {
+      background: linear-gradient(to right, #0f3e2e, #a88000);
+      background-image: url('technical-bg.png');
+      background-repeat: no-repeat;
+      background-size: cover;
+      color: #fff;
+    }header img {
   width: 100%;
   height: auto;
   display: block;
 }
 
+.main-title {
+  text-align: center;
+  color: gold;
+  font-size: 32px;
+  font-weight: bold;
+  margin-top: 20px;
+}
+
 nav {
   display: flex;
-  justify-content: center;
-  gap: 20px;
-  padding: 10px;
-  background-color: #1a3c23;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  padding: 10px 20px;
+  background-color: #1f332a;
+}
+
+.menu-toggle {
+  display: none;
+  flex-direction: column;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  background: gold;
+  margin: 4px;
+  width: 25px;
+}
+
+nav .menu {
+  display: flex;
+  gap: 15px;
 }
 
 nav a {
-  color: #ffd700;
+  color: gold;
   text-decoration: none;
   font-weight: bold;
 }
@@ -37,54 +62,95 @@ nav a {
 .container {
   padding: 20px;
   text-align: center;
-  background: linear-gradient(to bottom, rgba(27, 62, 32, 0.9), rgba(58, 94, 46, 0.9));
-  background-image: url('electro-bg-green-gold.jpg'); /* replace with actual bg if needed */
-  background-size: cover;
-  background-repeat: no-repeat;
-  background-position: center;
 }
 
 .hero {
-  display: none;
+  max-width: 100%;
+}
+
+.welcome {
+  margin-top: 60px;
+  font-size: 28px;
+}
+
+.buy-sell-btns {
+  margin-top: 20px;
+}
+
+.buy-sell-btns button {
+  background-color: gold;
+  color: #0f3e2e;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 footer {
-  background-color: #1a3c23;
-  color: #ffffff;
+  background-color: #0f3e2e;
+  color: white;
   padding: 20px;
   text-align: center;
   font-size: 14px;
-}
-
-footer p {
-  margin: 5px 0;
 }
 
 .footer-note {
   font-style: italic;
   font-size: 13px;
   margin-top: 10px;
-  color: #b4e197;
+  color: #aadfff;
+}
+
+@media (max-width: 768px) {
+  nav .menu {
+    display: none;
+    flex-direction: column;
+    width: 100%;
+    background-color: #1f332a;
+  }
+
+  nav .menu.active {
+    display: flex;
+  }
+
+  .menu-toggle {
+    display: flex;
+  }
 }
 
   </style>
 </head><body>
   <header>
     <img src="idc-banner.png" alt="IDC Banner">
-  </header>  <nav>
-    <a href="#about">About</a>
-    <a href="#tokenomics">Tokenomics</a>
-    <a href="#roadmap">Roadmap</a>
-    <a href="#faq">FAQ</a>
-    <a href="IDC_Whitepaper.pdf" download>Download Whitepaper</a>
-    <a href="#buy">Buy/Sell IDC</a>
+  </header>  <div class="main-title">India Digital Coin</div>  <nav>
+    <div class="menu-toggle" onclick="toggleMenu()">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+    <div class="menu" id="menu">
+      <a href="#about">About</a>
+      <a href="#tokenomics">Tokenomics</a>
+      <a href="#roadmap">Roadmap</a>
+      <a href="#faq">FAQ</a>
+      <a href="IDC_Whitepaper.pdf" download>Download Whitepaper</a>
+      <a href="#buy">Buy/Sell IDC</a>
+    </div>
   </nav>  <div class="container">
-    <!-- Custom background area with theme colors and electro effect -->
-    <h2>Welcome to India Digital Coin (IDC)</h2>
-    <p>Empowering the next generation with blockchain innovation.</p>
+    <div class="buy-sell-btns">
+      <button>Buy IDC</button>
+      <button>Sell IDC</button>
+    </div>
+    <div class="welcome">Welcome to India Digital Coin</div>
   </div>  <footer>
     <p>&copy; 2025 India Digital Coin. All rights reserved.</p>
     <p class="footer-note">Empowering the next generation with blockchain innovation.</p>
     <p class="footer-note">Ready to learn more? Read our Privacy Policy to find out more.</p>
-  </footer>
-</body></html>
+  </footer>  <script>
+    function toggleMenu() {
+      const menu = document.getElementById('menu');
+      menu.classList.toggle('active');
+    }
+  </script></body></html>
