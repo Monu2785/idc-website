@@ -2,73 +2,75 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>India Digital Coin (IDC)</title>
+  <link rel="stylesheet" href="style.css">
   <style>
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #0a1f16, #1a2b1d);
-      color: #f5f5dc;
-      background-image: url('https://www.transparenttextures.com/patterns/circuit-board.png');
+      background: linear-gradient(to right, #1b3e20, #3a5e2e);
+      color: #f8f8f8;
     }header {
-  background-color: #1b3e2b;
-  padding: 20px 0;
-  text-align: center;
-  color: #f5d742;
+  width: 100%;
+  height: auto;
+}
+
+header img {
+  width: 100%;
+  height: auto;
+  display: block;
 }
 
 nav {
   display: flex;
   justify-content: center;
   gap: 20px;
-  padding: 12px;
-  background-color: #0f2617;
-  box-shadow: 0 2px 10px rgba(255, 215, 0, 0.2);
+  padding: 10px;
+  background-color: #1a3c23;
 }
 
 nav a {
-  color: #f5d742;
+  color: #ffd700;
   text-decoration: none;
   font-weight: bold;
-  transition: color 0.3s ease;
-}
-
-nav a:hover {
-  color: #ffffff;
 }
 
 .container {
-  padding: 30px 20px;
+  padding: 20px;
   text-align: center;
+  background: linear-gradient(to bottom, rgba(27, 62, 32, 0.9), rgba(58, 94, 46, 0.9));
+  background-image: url('electro-bg-green-gold.jpg'); /* replace with actual bg if needed */
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
 }
 
-.hero img {
-  width: 100%;
-  max-width: 900px;
-  height: auto;
-  border-radius: 12px;
-  box-shadow: 0 4px 25px rgba(0, 0, 0, 0.4);
+.hero {
+  display: none;
 }
 
 footer {
-  background-color: #112318;
-  color: #ccc;
+  background-color: #1a3c23;
+  color: #ffffff;
   padding: 20px;
   text-align: center;
   font-size: 14px;
-  border-top: 1px solid #2e472e;
+}
+
+footer p {
+  margin: 5px 0;
 }
 
 .footer-note {
   font-style: italic;
   font-size: 13px;
   margin-top: 10px;
-  color: #d4af37;
+  color: #b4e197;
 }
 
   </style>
 </head><body>
   <header>
-    <h1>India Digital Coin (IDC)</h1>
+    <img src="idc-banner.png" alt="IDC Banner">
   </header>  <nav>
     <a href="#about">About</a>
     <a href="#tokenomics">Tokenomics</a>
@@ -77,9 +79,9 @@ footer {
     <a href="IDC_Whitepaper.pdf" download>Download Whitepaper</a>
     <a href="#buy">Buy/Sell IDC</a>
   </nav>  <div class="container">
-    <div class="hero">
-      <img src="idc-banner.png" alt="IDC Banner">
-    </div>
+    <!-- Custom background area with theme colors and electro effect -->
+    <h2>Welcome to India Digital Coin (IDC)</h2>
+    <p>Empowering the next generation with blockchain innovation.</p>
   </div>  <footer>
     <p>&copy; 2025 India Digital Coin. All rights reserved.</p>
     <p class="footer-note">Empowering the next generation with blockchain innovation.</p>
