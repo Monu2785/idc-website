@@ -1,9 +1,9 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>India Digital Coin (IDC)</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
     html {
       scroll-behavior: smooth;
@@ -21,6 +21,7 @@
     .banner-top {
       width: 100%;
       height: 190px;
+      object-fit: cover;
     }
     nav {
       display: flex;
@@ -35,48 +36,30 @@
       text-decoration: none;
       font-weight: bold;
     }
-    .section {
-      padding: 60px 20px;
-      background-color: rgba(0, 0, 0, 0.2);
-      margin: 30px auto;
-      max-width: 900px;
-      border-radius: 12px;
-    }
-    .section h2 {
-      color: #ffd700;
-      margin-bottom: 10px;
-    }
-    .section ul {
-      list-style-type: disc;
-      padding-left: 20px;
-    }
     .container {
-      padding: 0 20px 20px;
+      padding: 20px;
       text-align: center;
     }
     .title-under-banner {
       font-size: 36px;
       color: #ffd700;
-      margin: -40px auto 10px;
+      margin-top: 10px;
     }
-    .welcome-text {
-      font-size: 22px;
-      margin: 10px auto;
+    .welcome-box {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      margin: 20px auto;
+      border-radius: 12px;
+      max-width: 600px;
+      font-size: 20px;
+      box-shadow: 0 0 10px #000;
     }
-    .buy-sell-container {
+    .buy-sell-section {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      flex-wrap: wrap;
-      margin: 20px auto;
-      max-width: 700px;
-    }
-    .logo-placeholder {
-      width: 80px;
-      height: 80px;
-      background-color: #fff;
-      border-radius: 50%;
-      margin-left: 10px;
+      margin: 30px auto;
+      max-width: 600px;
     }
     .buy-sell-btn {
       background: linear-gradient(to right, #014421, #d4af37);
@@ -87,21 +70,36 @@
       cursor: pointer;
       text-decoration: none;
       border-radius: 6px;
-      margin-right: 10px;
     }
-    .social-links {
+    .logo-box {
+      width: 70px;
+      height: 70px;
+      background-color: white;
+      border-radius: 50%;
+    }
+
+    .social-row {
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      margin-top: 20px;
+      justify-content: center;
+      gap: 20px;
+      margin: 30px 0;
+      flex-wrap: wrap;
     }
-    .social-links a {
-      color: #fff;
+    .social-btn {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      background-color: rgba(0,0,0,0.3);
+      border: 1px solid #ffd700;
+      padding: 10px 15px;
+      border-radius: 8px;
+      color: white;
       text-decoration: none;
-      background-color: #014421;
-      padding: 10px 20px;
-      margin: 5px;
-      border-radius: 6px;
+      font-weight: bold;
+    }
+    .social-btn img {
+      width: 20px;
+      height: 20px;
     }
     footer {
       background-color: #002b1a;
@@ -110,136 +108,72 @@
       text-align: center;
       font-size: 14px;
     }
-    footer p {
-      margin: 5px 0;
-    }
     .footer-note {
       font-style: italic;
       font-size: 13px;
       margin-top: 10px;
       color: #aadfff;
     }
-    .form-section {
-      background-color: rgba(0, 0, 0, 0.3);
-      padding: 30px;
-      border-radius: 10px;
-      max-width: 500px;
-      margin: 40px auto;
-    }
-    .form-section input, .form-section textarea {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 5px;
-    }
-    .form-section button {
-      padding: 10px 20px;
-      background-color: #d4af37;
-      border: none;
-      color: #000;
-      font-weight: bold;
-      border-radius: 6px;
-      cursor: pointer;
-    }
-    .hamburger {
-      display: none;
-      position: absolute;
-      top: 20px;
-      right: 20px;
-      cursor: pointer;
-      z-index: 1001;
-    }
-    .hamburger div {
-      width: 25px;
-      height: 3px;
-      background-color: #ffd700;
-      margin: 5px 0;
-    }
-    @media (max-width: 768px) {
-      .hamburger {
-        display: block;
-      }
-      nav {
-        flex-direction: column;
-        display: none;
-        position: absolute;
-        top: 70px;
-        right: 20px;
-        background-color: rgba(0, 0, 0, 0.9);
-        padding: 10px;
-        border-radius: 8px;
-        z-index: 1000;
-      }
-      nav.active {
-        display: flex;
-      }
-    }
   </style>
 </head>
 <body>
   <header>
     <img src="idc-banner.png" alt="IDC Banner" class="banner-top" />
-  </header>  <div class="hamburger" onclick="toggleMenu()">
-    <div></div>
-    <div></div>
-    <div></div>
-  </div>  <nav id="navMenu">
+  </header>
+
+  <nav>
     <a href="#about">About</a>
     <a href="#tokenomics">Tokenomics</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
-    <a href="IDC_Whitepaper.pdf" download>Download Whitepaper</a>
-  </nav>  <div class="container">
-    <h1 class="title-under-banner">India Digital Coin (IDC)</h1>
-    <div class="welcome-text">
-      Welcome to India Digital Coin - Empowering the next generation with blockchain.
-    </div>
-    <div class="buy-sell-container">
-      <div class="logo-placeholder"></div>
+  </nav>
+
+  <div class="container">
+    <h1 class="title-under-banner">India Digital Coin</h1>
+    <div class="welcome-box">Welcome to India Digital Coin - Empowering the next generation with blockchain.</div>
+
+    <div class="buy-sell-section">
+      <div class="logo-box"></div>
       <a href="https://pancakeswap.finance" target="_blank" class="buy-sell-btn">Buy / Sell IDC</a>
     </div>
-    <div class="social-links">
-      <a href="https://instagram.com/IndiaDigitalCoin" target="_blank">Instagram</a>
-      <a href="https://facebook.com/IndiaDigitalCoin" target="_blank">Facebook</a>
-      <a href="https://twitter.com/indiadigitalcoin" target="_blank">Twitter</a>
-      <a href="https://wa.me/919000007534" target="_blank">WhatsApp</a>
+
+    <div class="social-row">
+      <a class="social-btn" href="#"><img src="whatsapp-icon.png" alt="">WhatsApp</a>
+      <a class="social-btn" href="#"><img src="instagram-icon.png" alt="">Instagram</a>
+      <a class="social-btn" href="#"><img src="twitter-icon.png" alt="">Twitter</a>
+      <a class="social-btn" href="#"><img src="facebook-icon.png" alt="">Facebook</a>
     </div>
-  </div>  <div id="about" class="section">
+  </div>
+
+  <div id="about" class="container">
     <h2>About</h2>
     <p>India Digital Coin is a youth-centric digital currency aimed at revolutionizing crypto adoption in India...</p>
-  </div>  <div id="tokenomics" class="section">
+  </div>
+
+  <div id="tokenomics" class="container">
     <h2>Tokenomics</h2>
     <p>Total Supply: 100,000,000 IDC. 50% Public Sale, 20% Team, 15% Rewards, 10% Liquidity, 5% Reserve.</p>
-  </div>  <div id="roadmap" class="section">
+  </div>
+
+  <div id="roadmap" class="container">
     <h2>Roadmap</h2>
     <ul>
       <li>Q1: Token Launch</li>
       <li>Q2: Website + Marketing</li>
       <li>Q3: Exchange Listings</li>
     </ul>
-  </div>  <div id="faq" class="section">
+  </div>
+
+  <div id="faq" class="container">
     <h2>FAQ</h2>
-    <p><strong>Q1:</strong> What is India Digital Coin (IDC)?<br> <strong>A:</strong> IDC is a youth-focused cryptocurrency built on the BNB Smart Chain.
-    <br><br><strong>Q2:</strong> How to buy IDC?<br> <strong>A:</strong> IDC can be bought from PancakeSwap using BNB.
-    <br><br><strong>Q3:</strong> Is IDC secure?<br> <strong>A:</strong> Yes, IDC uses blockchain encryption and smart contract audits for security.</p>
-  </div>  <div id="contact" class="form-section">
-    <h2>Contact Us</h2>
-    <form action="https://formspree.io/f/xyyrlgyy" method="POST">
-      <input type="text" name="name" placeholder="Your Name" required>
-      <input type="tel" name="phone" placeholder="Mobile Number" required>
-      <textarea name="message" placeholder="Your Message" rows="5" required></textarea>
-      <button type="submit">Send Message</button>
-    </form>
-  </div>  <footer>
+    <p>Here are answers to common questions about IDC. (Ye section customize kar sakte ho as needed.)</p>
+  </div>
+
+  <footer>
     <p>&copy; 2025 India Digital Coin. All rights reserved.</p>
     <p class="footer-note">Empowering the next generation with blockchain innovation.</p>
     <p class="footer-note">Ready to learn more? Read our Privacy Policy to find out more.</p>
-  </footer>  <script>
-    function toggleMenu() {
-      const nav = document.getElementById("navMenu");
-      nav.classList.toggle("active");
-    }
-  </script></body>
+  </footer>
+</body>
 </html>
