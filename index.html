@@ -11,7 +11,8 @@
     body {
       margin: 0;
       font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #014421, #d4af37);
+      background: url('circuit-bg.jpg') no-repeat center center fixed;
+      background-size: cover;
       color: #fff;
     }
     header {
@@ -21,8 +22,8 @@
     }
     .banner-top {
       width: 100%;
-      height: 190px;
-      object-fit: cover;
+      height: auto;
+      max-height: 300px;
     }
     .hamburger {
       position: absolute;
@@ -63,7 +64,7 @@
     }
     .welcome-box,
     .section-box {
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.5);
       padding: 20px;
       margin: 20px auto;
       border-radius: 12px;
@@ -122,11 +123,11 @@
       height: 20px;
     }
     .social-btn.insta, .social-btn.fb {
-      border-color: #006400; /* Dark Green */
+      border-color: #006400;
     }
 
     .form-section {
-      background-color: rgba(0, 0, 0, 0.3);
+      background-color: rgba(0, 0, 0, 0.4);
       padding: 20px;
       max-width: 600px;
       margin: 30px auto;
@@ -168,15 +169,20 @@
       nav {
         display: none;
         flex-direction: column;
-        background-color: rgba(0,0,0,0.8);
+        background-color: rgba(0,0,0,0.9);
         position: absolute;
         top: 60px;
         right: 20px;
         padding: 15px;
         border-radius: 10px;
+        z-index: 1000;
       }
       nav.active {
         display: flex;
+      }
+      .buy-sell-section {
+        flex-direction: column;
+        gap: 20px;
       }
     }
   </style>
@@ -239,17 +245,17 @@
     </ul>
   </div>
 
-<div id="faq" class="container">
-  <h2>FAQ</h2>
-  <p><strong>Q1: What is IDC?</strong><br>
-  India Digital Coin (IDC) is a cryptocurrency aimed at the youth, focusing on easy access to crypto trading and financial growth.</p>
+  <div id="faq" class="container">
+    <h2>FAQ</h2>
+    <p><strong>Q1: What is IDC?</strong><br>
+    India Digital Coin (IDC) is a cryptocurrency aimed at the youth, focusing on easy access to crypto trading and financial growth.</p>
 
-  <p><strong>Q2: Where can I buy IDC?</strong><br>
-  IDC is available on PancakeSwap. Just connect your wallet and swap BNB for IDC.</p>
+    <p><strong>Q2: Where can I buy IDC?</strong><br>
+    IDC is available on PancakeSwap. Just connect your wallet and swap BNB for IDC.</p>
 
-  <p><strong>Q3: Is there any holding reward?</strong><br>
-  Yes, long-term holders will receive periodic rewards and access to exclusive features and offers.</p>
-</div>
+    <p><strong>Q3: Is there any holding reward?</strong><br>
+    Yes, long-term holders will receive periodic rewards and access to exclusive features and offers.</p>
+  </div>
 
   <div id="contact" class="form-section">
     <h2>Contact Us</h2>
