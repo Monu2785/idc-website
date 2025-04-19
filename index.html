@@ -1,4 +1,5 @@
-<!DOCTYPE html><html lang="en">
+<!DOCTYPE html>
+<html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
@@ -14,6 +15,7 @@
       color: #fff;
     }
     header {
+      position: relative;
       padding: 0;
       text-align: center;
     }
@@ -21,6 +23,21 @@
       width: 100%;
       height: 190px;
       object-fit: cover;
+    }
+    .hamburger {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      z-index: 1001;
+    }
+    .hamburger div {
+      width: 25px;
+      height: 3px;
+      background-color: #ffd700;
+      margin: 4px 0;
     }
     nav {
       display: flex;
@@ -44,7 +61,8 @@
       color: #ffd700;
       margin-top: 10px;
     }
-    .welcome-box {
+    .welcome-box,
+    .section-box {
       background-color: rgba(0, 0, 0, 0.3);
       padding: 20px;
       margin: 20px auto;
@@ -73,12 +91,13 @@
     .logo-box {
       width: 70px;
       height: 70px;
-      background-image: url('idc-logo.png');
+      background-image: url('idc-coin.png');
       background-size: cover;
       background-position: center;
       border-radius: 50%;
-      border: 2px solid #ffd700;
+      box-shadow: 0 0 10px #000;
     }
+
     .social-row {
       display: flex;
       justify-content: center;
@@ -90,23 +109,44 @@
       display: flex;
       align-items: center;
       gap: 8px;
+      border: 2px solid #ffd700;
       background-color: rgba(0,0,0,0.3);
-      border: 1px solid;
       padding: 10px 15px;
       border-radius: 8px;
       color: white;
       text-decoration: none;
       font-weight: bold;
     }
-    .social-btn.whatsapp, .social-btn.twitter {
-      border-color: #ffd700;
-    }
-    .social-btn.instagram, .social-btn.facebook {
-      border-color: #00ff88;
-    }
     .social-btn img {
       width: 20px;
       height: 20px;
+    }
+    .social-btn.insta, .social-btn.fb {
+      border-color: #006400; /* Dark Green */
+    }
+
+    .form-section {
+      background-color: rgba(0, 0, 0, 0.3);
+      padding: 20px;
+      max-width: 600px;
+      margin: 30px auto;
+      border-radius: 12px;
+      box-shadow: 0 0 10px #000;
+    }
+    .form-section input, .form-section textarea {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border-radius: 8px;
+      border: none;
+    }
+    .form-section button {
+      background-color: #014421;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 6px;
+      cursor: pointer;
     }
     footer {
       background-color: #002b1a;
@@ -121,58 +161,110 @@
       margin-top: 10px;
       color: #aadfff;
     }
+    @media (max-width: 768px) {
+      .hamburger {
+        display: flex;
+      }
+      nav {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(0,0,0,0.8);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 10px;
+      }
+      nav.active {
+        display: flex;
+      }
+    }
   </style>
 </head>
 <body>
   <header>
     <img src="idc-banner.png" alt="IDC Banner" class="banner-top" />
-  </header>  <nav>
+    <div class="hamburger" onclick="toggleMenu()">
+      <div></div><div></div><div></div>
+    </div>
+  </header>
+
+  <nav id="navbar">
     <a href="#about">About</a>
     <a href="#tokenomics">Tokenomics</a>
     <a href="#roadmap">Roadmap</a>
     <a href="#faq">FAQ</a>
     <a href="#contact">Contact</a>
-  </nav>  <div class="container">
+  </nav>
+
+  <div class="container">
     <h1 class="title-under-banner">India Digital Coin</h1>
-    <div class="welcome-box">Welcome to India Digital Coin - Empowering the next generation with blockchain.</div><div class="buy-sell-section">
-  <div class="logo-box"></div>
-  <a href="https://pancakeswap.finance" target="_blank" class="buy-sell-btn">Buy / Sell IDC</a>
-</div>
+    <div class="welcome-box">Welcome to India Digital Coin - Empowering the next generation with blockchain.</div>
 
-<div class="social-row">
-  <a class="social-btn whatsapp" href="#"><img src="whatsapp-idc.png" alt="">WhatsApp</a>
-  <a class="social-btn instagram" href="#"><img src="Instagram-idc.png" alt="">Instagram</a>
-  <a class="social-btn twitter" href="#"><img src="twitter-idc.png" alt="">Twitter</a>
-  <a class="social-btn facebook" href="#"><img src="facebook-idc.jpeg" alt="">Facebook</a>
-</div>
+    <div class="buy-sell-section">
+      <div class="logo-box"></div>
+      <a href="https://pancakeswap.finance" target="_blank" class="buy-sell-btn">Buy / Sell IDC</a>
+    </div>
 
-  </div>  <div id="about" class="container">
+    <div class="social-row">
+      <a class="social-btn" href="https://wa.me/9000007534" target="_blank"><img src="whatsapp-idc.png" alt="">WhatsApp</a>
+      <a class="social-btn insta" href="https://instagram.com/IndiaDigitalCoin" target="_blank"><img src="Instagram-idc.png" alt="">Instagram</a>
+      <a class="social-btn" href="https://twitter.com/indiadigitalcoin" target="_blank"><img src="twitter-idc.png" alt="">Twitter</a>
+      <a class="social-btn fb" href="https://facebook.com/IndiaDigitalCoin" target="_blank"><img src="facebook-idc.jpeg" alt="">Facebook</a>
+    </div>
+  </div>
+
+  <div id="about" class="container section-box">
     <h2>About</h2>
-    <p>India Digital Coin (IDC) is a revolutionary cryptocurrency designed for the Indian youth and emerging traders. Our mission is to simplify digital investment and trading with a focus on transparency, affordability, and accessibility. Built on the Binance Smart Chain, IDC offers low fees, fast transactions, and a secure blockchain environment that empowers users to grow financially from their college days to professional life.</p>
-  </div>  <div id="tokenomics" class="container">
+    <p>India Digital Coin (IDC) is designed to offer the Indian youth a gateway into the world of blockchain and decentralized finance. Built on BNB Smart Chain, IDC focuses on affordability, speed, and utility.</p>
+  </div>
+
+  <div id="tokenomics" class="container section-box">
     <h2>Tokenomics</h2>
-    <p>Total Supply: 100,000,000 IDC. 50% Public Sale, 20% Team, 15% Rewards, 10% Liquidity, 5% Reserve.</p>
-  </div>  <div id="roadmap" class="container">
+    <p>Total Supply: 100,000,000 IDC<br/>
+    - 50% Public Sale<br/>
+    - 20% Team & Founders<br/>
+    - 15% Rewards & Airdrops<br/>
+    - 10% Liquidity Pool<br/>
+    - 5% Reserve & Emergency</p>
+  </div>
+
+  <div id="roadmap" class="container section-box">
     <h2>Roadmap</h2>
-    <ul>
-      <li><strong>Q1 2025:</strong> Token Development, Website Launch, Social Media Setup</li>
-      <li><strong>Q2 2025:</strong> Marketing Campaign, PancakeSwap Listing, Airdrop Program</li>
-      <li><strong>Q3 2025:</strong> Centralized Exchange Listing, Community Events, Mobile App Preview</li>
-      <li><strong>Q4 2025:</strong> IDC Wallet Launch, Strategic Partnerships, Expansion to New Markets</li>
+    <ul style="text-align:left; max-width:500px; margin:auto;">
+      <li>Q1 2025: Token Development & Launch</li>
+      <li>Q2 2025: Website, Marketing, Social Media</li>
+      <li>Q3 2025: Exchange Listings, Community Growth</li>
+      <li>Q4 2025: DApp & Wallet Integration</li>
     </ul>
-  </div>  <div id="faq" class="container">
+  </div>
+
+  <div id="faq" class="container section-box">
     <h2>FAQ</h2>
-    <p><strong>Q1: What is IDC?</strong><br>
-    India Digital Coin (IDC) is a cryptocurrency aimed at the youth, focusing on easy access to crypto trading and financial growth.</p><p><strong>Q2: Where can I buy IDC?</strong><br>
-IDC is available on PancakeSwap. Just connect your wallet and swap BNB for IDC.</p>
+    <p>We are currently building our knowledge base. Stay tuned for more FAQs about the IDC project.</p>
+  </div>
 
-<p><strong>Q3: Is there any holding reward?</strong><br>
-Yes, long-term holders will receive periodic rewards and access to exclusive features and offers.</p>
+  <div id="contact" class="form-section">
+    <h2>Contact Us</h2>
+    <form action="https://formspree.io/f/xpzvvppe" method="POST">
+      <input type="text" name="name" placeholder="Your Name" required />
+      <input type="tel" name="phone" placeholder="Mobile Number" required />
+      <textarea name="message" rows="4" placeholder="Your Message" required></textarea>
+      <button type="submit">Send Message</button>
+    </form>
+  </div>
 
-  </div>  <footer>
+  <footer>
     <p>&copy; 2025 India Digital Coin. All rights reserved.</p>
     <p class="footer-note">Empowering the next generation with blockchain innovation.</p>
     <p class="footer-note">Ready to learn more? Read our Privacy Policy to find out more.</p>
   </footer>
+
+  <script>
+    function toggleMenu() {
+      const nav = document.getElementById('navbar');
+      nav.classList.toggle('active');
+    }
+  </script>
 </body>
-    </html>
+</html>
