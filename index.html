@@ -7,12 +7,15 @@
     html {
       scroll-behavior: smooth;
     }
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      background: linear-gradient(to right, #014421, #d4af37);
-      color: #fff;
-    }
+      body {
+  margin: 0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  background: linear-gradient(to right, #014421, #d4af37), url('idc-backgroud.png');
+  background-size: cover; /* Ensures the image covers the whole background */
+  background-position: center center; /* Centers the background image */
+  background-attachment: fixed; /* Makes the background image fixed while scrolling */
+  color: #fff;
+      }
     header {
       position: relative;
       padding: 0;
